@@ -80,5 +80,5 @@ VOLUME /home/$FRAPPE_USER/frappe-bench/sites/localhost
 WORKDIR /home/$FRAPPE_USER/frappe-bench
 
 # EntryPoint
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-CMD ["app"]
+ENTRYPOINT ["sh", "/usr/local/bin/docker-entrypoint.sh"]
+# CMD  ['/bin/bash']
