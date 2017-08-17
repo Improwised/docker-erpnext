@@ -15,10 +15,8 @@ echo 'Waiting for DB to start up'
 dockerize -wait tcp://db:3306 -timeout 120s
 
 echo 'Erpnext install'
-cd /home/frappe/frappe-bench
+cd /home/frappe/frappe-bench && \
 bench get-app erpnext $ERPNEXT_REPO --branch $ERPNEXT_BRANCH && \
 bench reinstall && \
-bench install-app erpnext
-
-echo 'Supervisord start'
+bench install-app erpnext && \
 supervisor -c /etc/supervisor.conf
