@@ -16,7 +16,6 @@ ARG ERPNEXT_SITE
 ARG TIMEZONE
 ARG DOCKERIZE_VERSION
 
-
 # TZ
 RUN ln -snf /usr/share/zoneinfo/$TIMEZONE /etc/localtime && echo $TIMEZONE > /etc/timezone && \
     dpkg-reconfigure -f noninteractive tzdata && \
@@ -81,4 +80,4 @@ WORKDIR /home/$FRAPPE_USER/frappe-bench
 
 # EntryPoint
 ENTRYPOINT ["sh", "/usr/local/bin/docker-entrypoint.sh"]
-# CMD  ['/bin/bash']
+CMD ['supervisor', '-c', '/etc/supervisor.conf']

@@ -44,9 +44,22 @@ services:
             - ERPNEXT_BRANCH
             - ERPNEXT_REPO
             - ERPNEXT_SITE
+            - ERPNEXT_PASSWORD
+            - MYSQL_URI
+            - MYSQL_DATABASE
+            - MYSQL_PASSWORD
+            - MYSQL_USER
+            - MAIL_LOGIN
+            - MAIL_PASSWORD
+            - MAIL_PORT
+            - MAIL_SERVER
+            - REDIS_CACHE
+            - REDIS_QUEUE
+            - REDIS_SOCKETIO
+            - ROOT_PASSWORD
+            - ERPNEXT_SSL
+            - ERPNEXT_DEVELOPER
 
-        volumes:
-            - ../src:/home/${FRAPPE_USER}/frappe-bench/sites'
         depends_on:
             - db
             - redis-cache
